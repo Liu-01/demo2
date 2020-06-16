@@ -1,30 +1,13 @@
 import pytest
+from common.read_for_pytest import ReadData
 
-
-
-
-
-
-
-class Test000():
+class Test001():
 
     def setup(self):
         print('start')
-    def teardown(self):
-        print('finish')
 
-    def test01(self):
-        a=1
-        b=2
-        c=3
-        print('1111')
-        assert c==a+b
-    def test02(self):
-        a=1
-        b=2
-        c=b-a
-        print('2222')
-        assert c>a
-
+    @pytest.mark.parametrize("name,password",ReadData().ReadExecl('dara.xlsx'))
+    def test01(self,name,password):
+        print(name,password)
 
 

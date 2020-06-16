@@ -1,28 +1,21 @@
 import unittest
-import os,sys
-sys.path.append(os.getcwd())
 from common.HTMLTestRunner1 import HTMLTestRunner
+from ddt import ddt,data,unpack
+from common.read_for_unittest import ReadData
 
 
-
+@ddt
 class Test000(unittest.TestCase):
 
     def setUp(self) -> None:
         print('start')
     def tearDown(self) -> None:
         print('finish')
-    def test01(self):
-        a=1
-        b=2
-        c=3
-        print('1111')
-        self.assertEqual(a+b,c)
-    def test02(self):
-        a=1
-        b=2
-        c=b-a
-        print('2222')
-        self.assertEqual(c,a)
+    @data(*ReadData().ReadExecl('dara.xlsx'))
+    @unpack
+    def test01(self,name,password):
+        print(name,password)
+
 if __name__ == '__main__':
     suit=unittest.TestLoader().loadTestsFromTestCase(Test000)
     with open('../report/report.html','wb')as f:
