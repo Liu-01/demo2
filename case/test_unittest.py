@@ -1,4 +1,6 @@
 import unittest
+import os,sys
+sys.path.append(os.getcwd())
 from common.HTMLTestRunner1 import HTMLTestRunner
 
 
