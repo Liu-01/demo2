@@ -1,3 +1,4 @@
+import os
 import unittest
 from common.HTMLTestRunner1 import HTMLTestRunner
 from ddt import ddt,data,unpack
@@ -17,6 +18,7 @@ class Test000(unittest.TestCase):
         print(name,password)
 
 if __name__ == '__main__':
+    path=os.path.dirname(os.path.dirname(__file__))+'/report/report.html'
     suit=unittest.TestLoader().loadTestsFromTestCase(Test000)
-    with open('../report/report.html','wb')as f:
+    with open(path,'wb')as f:
         HTMLTestRunner(stream=f,title='测试',tester='lg',description='测试发送邮件').run(suit)
