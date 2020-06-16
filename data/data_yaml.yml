@@ -1,0 +1,7 @@
+test:
+  -
+    name: '1'
+    password: '111'
+  -
+    name: '2'
+    password: '222'

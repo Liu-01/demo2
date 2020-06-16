@@ -1,0 +1,20 @@
+{
+    "msg": "ok",
+    "result": [
+        {
+            "zipcode": "344700",
+            "address": "建昌镇上诸村",
+            "province": "江西",
+            "town": "南城县",
+            "city": "抚州"
+        },
+        {
+            "zipcode": "344701",
+            "address": "建昌镇宋家排村",
+            "province": "江西",
+            "town": "南城县",
+            "city": "抚州"
+        }
+    ],
+    "status": 0
+}
